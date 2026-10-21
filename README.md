@@ -110,16 +110,18 @@ Validation includes:
 - Date-consistency checks
 - Database constraint inspection
 
-## How to Run
+## How to Run the Project
 
-1. Create a PostgreSQL database named `shopsphere`.
+1. Create a PostgreSQL database named shopsphere.
 2. Open the SQL scripts in pgAdmin or another PostgreSQL-compatible SQL editor.
-3. Execute the scripts in numerical order, starting with `01_create_tables.sql`.
-4. Review the results of `03_data_quality_checks.sql`.
+3. Execute the scripts in numerical order:
+   - `01_create_tables.sql` — Create the tables and relationships.
+   - `02_insert_sample_data.sql` — Insert the sample data.
+   - `03_data_quality_checks.sql` — Validate the data.
+   - `04_sales_analysis.sql` — Run the sales and customer analysis queries.
+4. Review the query results to explore revenue trends, product profitability, order performance, and customer behavior.
 
 **Important:** These scripts are intended for a fresh database. Do not rerun the table-creation or data-insertion scripts against an already populated database without resetting it appropriately.
-
-## Project Progress
 
 ## Project Progress
 
