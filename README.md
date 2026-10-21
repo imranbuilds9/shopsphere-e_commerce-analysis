@@ -11,6 +11,20 @@ ShopSphere is a fictional e-commerce database project built using PostgreSQL. It
 - Analyze sales performance and customer behavior using SQL.
 - Develop business insights and recommendations.
 
+## Business Summary
+
+ShopSphere generated a total of **₹6,66,090 in revenue from completed orders**. The Electronics category accounted for **₹5,86,600 (88.07%)** of completed revenue, indicating a high concentration of revenue in a single category. This dependence could expose the business to risk if demand for electronics declines. ShopSphere should monitor Electronics performance and explore opportunities to increase revenue from other categories.
+
+Repeat customers contributed **87.76% of total completed revenue**, highlighting their importance to the business. ShopSphere should investigate customer retention strategies to encourage repeat purchases and maintain this revenue contribution.
+
+**Laptop Pro 14 generated the highest gross profit, at ₹72,000**, among the products analyzed. ShopSphere should review the product's sales performance, profit margins, and demand before making inventory decisions.
+
+### Limitations
+
+- The dataset is small and fictional, so the findings cannot reliably represent real-world customer or market behaviour.
+- The gross-profit calculation uses current product costs for historical orders, which may not match the actual costs at the time of sale. Therefore, calculated gross profit may differ from actual historical gross profit.
+
+
 ## Tools Used
 
 - PostgreSQL
@@ -96,11 +110,16 @@ Validation includes:
 
 ## Project Progress
 
+## Project Progress
+
 - [x] Database schema created
 - [x] Sample data inserted
 - [x] Data quality checks performed
-- [ ] Sales analysis queries
-- [ ] Business insights and recommendations
+- [x] Sales and revenue analysis
+- [x] Product profitability analysis
+- [x] Customer behavior and repeat-customer analysis
+- [x] Business insights and recommendations
+- [ ] Final SQL script organization and documentation review
 
 ## Notes
 ShopSphere and all customer, product, and order records are fictional and intended for educational and portfolio demonstration purposes.
