@@ -85,6 +85,7 @@ The repository contains the following files and folders:
   - 01_create_tables.sql — Creates the database tables and constraints.
   - 02_insert_sample_data.sql — Inserts fictional sample records.
   - 03_data_quality_checks.sql — Contains data quality validation queries.
+  - 04_sales_analysis.sql — Contains SQL queries for sales, revenue, product profitability, and customer behavior analysis.
 
 
 ## Data Quality
