@@ -4,7 +4,7 @@
 -- Purpose: Analyze sales performance and customer behavior
 -- =====================================================
 
-
+-- SECTION 1 : Overall Revenue Analysis
 -- 1) How much revenue we generated from the completed orders ?
 
 SELECT sum(oi.unit_price * oi.quantity) as revenue
@@ -22,7 +22,7 @@ WHERE o.status = 'Completed'
 GROUP BY o.order_id 
 ORDER BY order_revenue DESC;
 
-
+--  SECTION 2: Category Revenue Analysis
 -- 3) Which product categories generate the most revenue ?
 
 SELECT p.category , sum(oi.unit_price * oi.quantity) as revenue 
@@ -46,7 +46,7 @@ where o.status = 'Completed'
 group by p.category 
 order by revenue DESC;
 
-
+--  SECTION 3: Monthly Sales and Trend Analysis
 -- 5) How does our revenue change from month to month ?
 
 SELECT DATE_TRUNC('month',o.order_date)::DATE as revenue_month,
@@ -109,7 +109,7 @@ join products p ON oi.product_id = p.product_id
 where o.status= 'Completed' AND order_date >= '2025-03-01' AND order_date <'2025-04-01'
 order by order_id , product_name;
 
-
+--  SECTION 4: Product Performance and Profitability
 -- 9) Which individual products contribute the most revenue from completed orders ?
 
 SELECT p.product_name,
@@ -157,7 +157,7 @@ where o.status = 'Completed'
 group by p.product_name , p.product_id
 order by gross_profit_margin_percentage DESC ; 
 
-
+--   SECTION 5: Order Analysis
 -- 12) How many orders are Completed, Pending, Cancelled, or Returned, 
 --        and what percentage of all orders does each status represent?
 
@@ -198,7 +198,7 @@ WHERE o.status = 'Completed'
 GROUP BY o.order_id
 ORDER BY items_sold DESC;
 
-
+--  SECTION 6: Customer Revenue and Repeat Purchases
 -- 16) Which customers contribute the most revenue to ShopSphere ?
 
 SELECT c.customer_id , c.first_name , c.last_name , sum(oi.unit_price * oi.quantity) as total_revenue
@@ -266,9 +266,9 @@ SELECT sum(customer_revenue) FILTER(WHERE total_orders >=2 ) as repeat_customer_
 	            nullif(sum (customer_revenue),0),2) as repeat_cust_revenue_percent
 FROM cust_revenue; 
 
-
--- 21) Let's investigate customer retention by finding customers who have placed orders
----    but have never completed an order.
+--  SECTION 7: Customer Retention and Segmentation
+-- 21) Find customers who have placed orders but have never completed an order
+--       to investigate the customer retention.
 
 SELECT c.customer_id , c.first_name , c.last_name , count(o.order_id) as total_orders ,
        count(o.order_id) FILTER(where o.status = 'Completed') as total_completed_orders
