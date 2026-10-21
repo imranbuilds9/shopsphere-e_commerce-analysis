@@ -66,7 +66,6 @@ WITH monthly_sales AS (SELECT DATE_TRUNC('month',o.order_date)::DATE as revenue_
 						JOIN order_items oi ON o.order_id = oi.order_id
 						WHERE o.status = 'Completed'
 						GROUP BY DATE_TRUNC('month',o.order_date) :: DATE
-						ORDER BY revenue_month
 						 ),
 		sales_prev_month_revenue AS (SELECT revenue_month, 
 		                                monthly_revenue,
@@ -163,7 +162,7 @@ order by gross_profit_margin_percentage DESC ;
 
 SELECT status,
       count(*) as total_orders,
-	  round((count(*)*100/sum(count(*)) over()),2)as percentage_of_orders
+	  round((count(*)*100.0 /sum(count(*)) over()),2)as percentage_of_orders
 FROM orders
 group by status
 order by total_orders DESC ;
@@ -209,7 +208,7 @@ where o.status = 'Completed'
 group by c.customer_id
 order by total_revenue DESC ;
 
--- 17) Are high-revenue customers placing more orders, or are they spending more per order ?
+-- 17) How many completed orders has each customer placed, and how much revenue have they generated?
 
 SELECT c.customer_id , c.first_name , c.last_name , count(DISTINCT o.order_id) as total_orders,
        sum(oi.unit_price * oi.quantity ) as total_revenue
@@ -245,7 +244,7 @@ join order_items oi ON oi.order_id = o.order_id
 where o.status = 'Completed'
 group by c.customer_id 
 having count(distinct o.order_id)>=2
-order by total_orders DESC;
+order by total_orders DESC , total_revenue DESC;
 
 
 -- 20) How much of ShopSphere's completed-order revenue is generated 
