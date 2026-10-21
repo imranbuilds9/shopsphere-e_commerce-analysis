@@ -24,6 +24,16 @@ Repeat customers contributed **87.76% of total completed revenue**, highlighting
 - The dataset is small and fictional, so the findings cannot reliably represent real-world customer or market behaviour.
 - The gross-profit calculation uses current product costs for historical orders, which may not match the actual costs at the time of sale. Therefore, calculated gross profit may differ from actual historical gross profit.
 
+## SQL Skills Demonstrated
+
+- **Aggregations:** SUM(), COUNT(), AVG()
+- **Joins:** INNER JOIN, LEFT JOIN
+- **Conditional Logic:** CASE expressions
+- **Common Table Expressions (CTEs):** Structuring multi-step queries
+- **Window Functions:** LAG() and cumulative calculations
+- **Ranking and Analysis:** RANK(), percentage calculations, and customer segmentation
+- **Data Handling:** COALESCE(), NULLIF(), and handling missing values
+- **Business Analysis:** Revenue trends, product profitability, order performance, and customer retention
 
 ## Tools Used
 
