@@ -17,7 +17,7 @@ ShopSphere generated a total of **₹6,66,090 in revenue from completed orders**
 
 Repeat customers contributed **87.76% of total completed revenue**, highlighting their importance to the business. ShopSphere should investigate customer retention strategies to encourage repeat purchases and maintain this revenue contribution.
 
-**Laptop Pro 14 generated the highest gross profit, at ₹72,000**, among the products analyzed. ShopSphere should review the product's sales performance, profit margins, and demand before making inventory decisions.
+**Laptop Pro 14 generated the highest gross profit, at ₹72,000**, among the products analysed. ShopSphere should review the product's sales performance, profit margins, and demand before making inventory decisions.
 
 ### Limitations
 
